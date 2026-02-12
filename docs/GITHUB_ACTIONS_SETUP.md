@@ -15,7 +15,7 @@ This guide explains how interview questions automatically update on the communit
 
 ## Architecture
 
-### Repo 1: `Nandan29300/interview-questions`
+### Repo 1: `TrainWithShubham/interview-questions`
 - Contains CSV files with interview questions
 - When PR merges to `main`, triggers workflow
 
@@ -39,7 +39,7 @@ This guide explains how interview questions automatically update on the communit
 
 ### Step 2: Add Secret to interview-questions Repo
 
-1. Go to https://github.com/Nandan29300/interview-questions/settings/secrets/actions
+1. Go to https://github.com/TrainWithShubham/interview-questions/settings/secrets/actions
 2. Click "New repository secret"
 3. Name: `TRIGGER_TOKEN`
 4. Value: Paste the PAT from Step 1
@@ -49,7 +49,7 @@ This guide explains how interview questions automatically update on the communit
 
 1. Make a small change to any CSV file in `interview-questions`
 2. Commit and push to `main` (or merge a PR)
-3. Go to https://github.com/Nandan29300/interview-questions/actions
+3. Go to https://github.com/TrainWithShubham/interview-questions/actions
 4. You should see "Trigger Community Website Rebuild" running ✅
 5. Go to https://github.com/TrainWithShubham/community-website/actions
 6. You should see "Deploy to GitHub Pages" running ✅
@@ -90,7 +90,7 @@ Listens for webhooks and rebuilds the site.
 ### Webhook not triggering?
 1. Check if `TRIGGER_TOKEN` secret exists in interview-questions repo
 2. Verify token has `repo` and `workflow` scopes
-3. Check Actions logs: https://github.com/Nandan29300/interview-questions/actions
+3. Check Actions logs: https://github.com/TrainWithShubham/interview-questions/actions
 
 ### Build failing?
 1. Check community-website Actions: https://github.com/TrainWithShubham/community-website/actions

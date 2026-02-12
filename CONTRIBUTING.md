@@ -14,7 +14,7 @@ Thank you for considering contributing to this repository! Your contributions he
 
 ### Step 1: Fork the Repository
 
-1. Navigate to [https://github.com/Nandan29300/interview-questions](https://github.com/Nandan29300/interview-questions)
+1. Navigate to [https://github.com/TrainWithShubham/interview-questions](https://github.com/TrainWithShubham/interview-questions)
 2. Click the **Fork** button in the top-right corner
 3. This creates a copy of the repository in your GitHub account
 
@@ -42,7 +42,7 @@ Navigate to the appropriate folder and edit the CSV file:
 
 ```bash
 cd devops
-nano devops-interview-questions.csv
+nano interview-questions.csv
 ```
 
 Add your interview questions following the format below.
