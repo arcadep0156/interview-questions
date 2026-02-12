@@ -1,0 +1,22 @@
+name: Trigger Community Website Rebuild
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'devops/**'
+      - '**/*.csv'
+
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Community Website Rebuild
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.TRIGGER_TOKEN }} # PAT Token Name
+          repository: arcadep0156/community-website
+          event-type: interview-questions-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'

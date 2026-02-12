@@ -1,0 +1,6 @@
+company,year,contributor,role,experience,topic,question
+Amazon,2024,@johndoe,DevOps Engineer,3-5 years,Docker,"Explain the difference between Docker CMD and ENTRYPOINT. When would you use one over the other?"
+Google,2024,@janedoe,SRE,5+ years,Kubernetes,"How do you implement rolling updates in Kubernetes? What strategies would you use to ensure zero downtime?"
+Microsoft,2023,@devops_guru,Cloud Engineer,2-3 years,CI/CD,"Describe a complete CI/CD pipeline you've built. What tools did you use and how did you handle deployment failures?"
+OpenAI,2025,@ai_dev,DevOps Engineer,2,CI/CD,How do you automate rollback in a failed deployment pipeline?
+Cloudflare,2024,@netops,Network Engineer,4,Networking,What is Anycast and how does Cloudflare use it for DDoS protection?
