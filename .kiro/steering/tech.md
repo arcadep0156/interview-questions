@@ -90,9 +90,10 @@ Add: [Company] [Topic] interview questions
 
 ## Validation
 
-- CSV syntax validation via GitHub Actions
-- Column count verification (must be 7)
-- Format compliance checks
+- JSON schema validation via GitHub Actions
+- Duplicate ID detection
+- Topic validation against approved list
+- Automated index and contributor generation
 - Duplicate detection
 
 ## Common Commands
@@ -105,7 +106,7 @@ git clone https://github.com/Nandan29300/interview-questions.git
 git checkout -b add-interview-questions
 
 # Add changes
-git add devops/interview-questions.csv
+git add data/2025/company.json
 
 # Commit with proper format
 git commit -m "Add: Amazon Docker interview questions"
@@ -118,7 +119,7 @@ git push origin add-interview-questions
 
 - Real questions from actual interviews
 - Clear, grammatically correct English
-- Proper CSV escaping and formatting
+- Proper JSON formatting with all required fields
 - No duplicate entries
 - Accurate company names and years
 - Valid topic categories

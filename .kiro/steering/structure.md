@@ -32,7 +32,7 @@ interview-questions/
 - `README.md` - Project introduction and quick start
 - `CONTRIBUTING.md` - Detailed contribution guidelines
   - Fork and clone instructions
-  - CSV formatting rules
+  - JSON formatting rules
   - PR process and templates
   - Quality standards
 - `docs/GITHUB_ACTIONS_SETUP.md` - CI/CD configuration
@@ -40,8 +40,9 @@ interview-questions/
 ### GitHub Integration
 
 - `.github/workflows/` - Automated validation workflows
-  - CSV syntax validation
-  - Format compliance checks
+  - JSON schema validation
+  - Duplicate ID detection
+  - Auto-generation of index and contributors
   - PR automation
 
 ## Data Organization
@@ -99,13 +100,16 @@ company,year,contributor,role,experience,topic,question
 ## Conventions
 
 ### File Naming
-- Use lowercase with hyphens: `interview-questions.csv`
+- Use lowercase with hyphens: `company.json`
+- Data files: `data/YYYY/company.json`
 - Documentation: `UPPERCASE.md` for root-level docs
 - Guides: `lowercase-with-hyphens.md` for subdirectories
 
-### CSV Formatting
-- Always quote fields containing commas
-- Use double quotes to escape quotes: `"What is ""IaC""?"`
+### JSON Formatting
+- Valid JSON syntax with proper commas and brackets
+- All required fields must be present
+- Year as number, not string
+- Unique IDs in format: company-year-number
 - No line breaks within questions
 - UTF-8 encoding
 - Unix line endings (LF)
@@ -136,11 +140,13 @@ company,year,contributor,role,experience,topic,question
 
 ### GitHub Actions
 - Runs on PR creation
-- Validates CSV syntax
-- Checks column count
+- Validates JSON schema
+- Checks for duplicate IDs
+- Validates topics against approved list
+- Auto-generates index.json and contributors.json
 - Reports errors in PR comments
 
 ### Community Website
-- CSV data consumed by TrainWithShubham community website
+- JSON data consumed by community website at arcadep0156.github.io/community-website
 - Questions displayed in searchable interface
-- Filtered by topic, company, experience level
+- Filtered by topic, company, experience level, difficulty

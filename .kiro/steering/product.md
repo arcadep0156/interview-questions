@@ -4,36 +4,41 @@ TrainWithShubham Interview Questions Repository - a community-driven collection 
 
 ## Core Purpose
 
-This repository serves as a centralized knowledge base where community members contribute actual interview questions they've encountered, helping others prepare for technical interviews.
+This repository serves as a structured database of real interview questions, consumed by the community website at https://arcadep0156.github.io/community-website/
 
 ## Key Features
 
 - **Community Contributions**: GitHub-based workflow for submitting interview questions
-- **Structured Data**: CSV format with standardized columns (company, year, contributor, role, experience, topic, question)
-- **Quality Control**: Contribution guidelines and validation processes
+- **Structured Data**: JSON format organized by year and company with schema validation
+- **Quality Control**: Automated validation and contribution guidelines
 - **Real Questions**: Focus on authentic questions from actual interviews (2023+)
+- **Contributor Recognition**: LinkedIn integration and contributor leaderboard
 
 ## Data Structure
 
-CSV columns:
+JSON format with required fields:
+- `id` - Unique identifier (company-year-number)
 - `company` - Company name where interview occurred
-- `year` - Year of interview (YYYY format)
-- `contributor` - GitHub username with @ prefix
+- `year` - Year of interview (YYYY as number)
 - `role` - Job title/role interviewed for
-- `experience` - Experience level (0-1 years, 1-2 years, 3-5 years, 5+ years)
-- `topic` - Standardized topic category (Docker, Kubernetes, AWS, etc.)
+- `experience` - Experience level (Fresher, 0-2 years, 3-5 years, 5+ years)
+- `topic` - Standardized topic from approved list (Docker, Kubernetes, AWS, etc.)
 - `question` - Full interview question text
+- `difficulty` - Question difficulty (easy, medium, hard)
+- `contributor` - Object with name, github, and optional linkedin
+- `contributedAt` - Date contributed (YYYY-MM-DD)
+- `tags` - Array of related keywords
 
 ## Target Audience
 
 - DevOps engineers preparing for interviews
 - Cloud practitioners seeking real-world interview questions
-- DevSecOps professionals building interview knowledge
-- Contributors sharing their interview experiences
+- DevSecOps professionals
+- Students and freshers entering the field
 
-## Key Goals
+## Integration
 
-- Build comprehensive interview question database
-- Maintain high quality through community review
-- Enable effective interview preparation
-- Foster knowledge sharing culture
+- Questions consumed by community website
+- Searchable and filterable interface
+- Automatic website rebuild on new questions
+- Contributor tracking and recognition
