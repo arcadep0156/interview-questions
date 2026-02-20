@@ -135,12 +135,13 @@ git push origin add-interview-questions
    - Updates `contributors.json`
    - Triggers website rebuild
    - Your questions appear on the website within 3 minutes! 🎉
+   - Do `git pull` after merge (unless you want to sync your **fork(local)**)
 
 **You don't need to:**
 - ❌ Run any scripts
 - ❌ Update index.json manually
 - ❌ Update contributors.json manually
-- ❌ Do git pull after merge (unless you want to sync your fork)
+
 
 Everything is automated! Just add your questions and create a PR.
 
