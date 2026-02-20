@@ -16,6 +16,20 @@
       },
       "contributedAt": "2024-09-10",
       "tags": ["networking", "anycast", "ddos", "security"]
+    },
+    {
+      "id": "cloudflare-2024-002",
+      "role": "DevOps Engineer",
+      "experience": "3-5 years",
+      "topic": "CDN",
+      "question": "How would you optimize cache hit ratios for a global CDN?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Grace Lee",
+        "github": "@gracelee"
+      },
+      "contributedAt": "2024-10-15",
+      "tags": ["cdn", "caching", "performance"]
     }
   ]
 }

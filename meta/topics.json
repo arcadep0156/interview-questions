@@ -1,11 +1,14 @@
 {
   "topics": [
     "AWS",
+    "Automation",
     "Azure",
+    "CDN",
     "CI/CD",
     "Docker",
     "GCP",
     "Git",
+    "Infrastructure",
     "Jenkins",
     "Kubernetes",
     "Legacy Systems",

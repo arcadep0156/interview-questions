@@ -16,6 +16,35 @@
       },
       "contributedAt": "2024-10-20",
       "tags": ["kubernetes", "deployment", "sre", "zero-downtime"]
+    },
+    {
+      "id": "google-2024-002",
+      "role": "DevOps Engineer",
+      "experience": "3-5 years",
+      "topic": "CI/CD",
+      "question": "Explain the concept of GitOps. How would you implement it using tools like ArgoCD or Flux?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Sarah Brown",
+        "github": "@sarahbrown"
+      },
+      "contributedAt": "2024-11-05",
+      "tags": ["gitops", "argocd", "kubernetes", "cicd"]
+    },
+    {
+      "id": "google-2024-003",
+      "role": "Cloud Architect",
+      "experience": "5+ years",
+      "topic": "GCP",
+      "question": "Design a multi-region disaster recovery strategy on Google Cloud Platform.",
+      "difficulty": "hard",
+      "contributor": {
+        "name": "Ivan Petrov",
+        "github": "@ivanpetrov",
+        "linkedin": "https://linkedin.com/in/ivanpetrov"
+      },
+      "contributedAt": "2024-12-01",
+      "tags": ["gcp", "disaster-recovery", "architecture"]
     }
   ]
 }

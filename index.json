@@ -1,60 +1,100 @@
 {
   "version": "v1",
-  "lastUpdated": "2025-02-20T10:00:00Z",
-  "totalQuestions": 6,
+  "lastUpdated": "2026-02-20T09:15:00.771Z",
+  "totalQuestions": 15,
   "files": [
     {
       "path": "data/2023/ibm.json",
       "company": "IBM",
       "year": "2023",
-      "count": 1,
-      "topics": ["Legacy Systems"],
-      "sha256": "abc123def456"
+      "count": 2,
+      "topics": [
+        "Legacy Systems",
+        "Automation"
+      ]
     },
     {
       "path": "data/2023/microsoft.json",
       "company": "Microsoft",
       "year": "2023",
-      "count": 1,
-      "topics": ["CI/CD"],
-      "sha256": "def456ghi789"
+      "count": 2,
+      "topics": [
+        "CI/CD",
+        "Azure"
+      ]
     },
     {
       "path": "data/2024/amazon.json",
       "company": "Amazon",
       "year": "2024",
-      "count": 1,
-      "topics": ["Docker"],
-      "sha256": "ghi789jkl012"
+      "count": 4,
+      "topics": [
+        "Docker",
+        "AWS",
+        "Monitoring",
+        "Linux"
+      ]
     },
     {
       "path": "data/2024/cloudflare.json",
       "company": "Cloudflare",
       "year": "2024",
-      "count": 1,
-      "topics": ["Networking"],
-      "sha256": "jkl012mno345"
+      "count": 2,
+      "topics": [
+        "Networking",
+        "CDN"
+      ]
     },
     {
       "path": "data/2024/google.json",
       "company": "Google",
       "year": "2024",
-      "count": 1,
-      "topics": ["Kubernetes"],
-      "sha256": "mno345pqr678"
+      "count": 3,
+      "topics": [
+        "Kubernetes",
+        "CI/CD",
+        "GCP"
+      ]
     },
     {
       "path": "data/2025/openai.json",
       "company": "OpenAI",
       "year": "2025",
-      "count": 1,
-      "topics": ["CI/CD"],
-      "sha256": "pqr678stu901"
+      "count": 2,
+      "topics": [
+        "CI/CD",
+        "Infrastructure"
+      ]
     }
   ],
   "metadata": {
-    "companies": ["Amazon", "Cloudflare", "Google", "IBM", "Microsoft", "OpenAI"],
-    "years": ["2023", "2024", "2025"],
-    "topics": ["CI/CD", "Docker", "Kubernetes", "Legacy Systems", "Networking"]
+    "companies": [
+      "Amazon",
+      "Cloudflare",
+      "Google",
+      "IBM",
+      "Microsoft",
+      "OpenAI"
+    ],
+    "years": [
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "topics": [
+      "AWS",
+      "Automation",
+      "Azure",
+      "CDN",
+      "CI/CD",
+      "Docker",
+      "GCP",
+      "Infrastructure",
+      "Kubernetes",
+      "Legacy Systems",
+      "Linux",
+      "Monitoring",
+      "Networking"
+    ]
   }
 }
