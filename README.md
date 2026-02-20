@@ -92,11 +92,11 @@ AWS, Azure, CI/CD, Docker, GCP, Git, Jenkins, Kubernetes, Legacy Systems, Linux,
 <!-- CONTRIBUTORS_START -->
 This section is auto-generated. Top contributors by question count:
 
-1. **Test User** ([@testuser](https://github.com/testuser)) - 2 questions
-2. **Mainframe Expert** ([@mainframe](https://github.com/mainframe)) - 1 question
-3. **Frank Miller** ([@frankmiller](https://github.com/frankmiller)) - 1 question
-4. **DevOps Guru** ([@devops_guru](https://github.com/devops_guru)) - 1 question
-5. **Emma Johnson** ([@emmaj](https://github.com/emmaj)) - 1 question
+1. **Community** ([@community](https://github.com/community)) - 4 questions
+2. **Test User** ([@testuser](https://github.com/testuser)) - 2 questions
+3. **Mainframe Expert** ([@mainframe](https://github.com/mainframe)) - 1 question
+4. **Frank Miller** ([@frankmiller](https://github.com/frankmiller)) - 1 question
+5. **DevOps Guru** ([@devops_guru](https://github.com/devops_guru)) - 1 question
 
 [View all contributors →](contributors.json)
 <!-- CONTRIBUTORS_END -->

@@ -61,6 +61,66 @@
       },
       "contributedAt": "2025-02-20",
       "tags": ["docker", "containers", "dockerfile"]
+    },
+    {
+      "id": "openai-2025-005",
+      "role": "DevOps Engineer",
+      "experience": "Fresher",
+      "topic": "Linux",
+      "question": "What is the difference between a process and a thread in Linux?",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Community",
+        "github": "@community",
+        "linkedin": "https://linkedin.com/in/community"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["linux", "process", "thread", "basics"]
+    },
+    {
+      "id": "openai-2025-006",
+      "role": "Cloud Engineer",
+      "experience": "Fresher",
+      "topic": "Cloud Basics",
+      "question": "What are the main differences between IaaS, PaaS, and SaaS?",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Community",
+        "github": "@community",
+        "linkedin": "https://linkedin.com/in/community"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["cloud", "iaas", "paas", "saas", "basics"]
+    },
+    {
+      "id": "openai-2025-007",
+      "role": "DevOps Engineer",
+      "experience": "Fresher",
+      "topic": "Git",
+      "question": "Explain the difference between 'git pull' and 'git fetch'.",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Community",
+        "github": "@community",
+        "linkedin": "https://linkedin.com/in/community"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["git", "version-control", "basics"]
+    },
+    {
+      "id": "openai-2025-008",
+      "role": "DevOps Engineer",
+      "experience": "Fresher",
+      "topic": "Networking",
+      "question": "What is the difference between TCP and UDP protocols?",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Community",
+        "github": "@community",
+        "linkedin": "https://linkedin.com/in/community"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["networking", "tcp", "udp", "protocols"]
     }
   ]
 }
