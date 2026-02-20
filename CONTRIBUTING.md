@@ -136,7 +136,6 @@ git push origin add-interview-questions
    - Triggers website rebuild
    - Your questions appear on the website within 3 minutes! 🎉
    - Do `git pull` after merge (unless you want to sync your **fork(local)**)
->>>>>>> feat/interview-questions
 
 **You don't need to:**
 - ❌ Run any scripts
@@ -144,7 +143,6 @@ git push origin add-interview-questions
 - ❌ Update contributors.json manually
 - ❌ Do git pull after merge (unless you want to sync your fork)
 
->>>>>>> feat/interview-questions
 
 Everything is automated! Just add your questions and create a PR.
 
