@@ -35,7 +35,7 @@
     {
       "id": "openai-2025-003",
       "role": "DevOps Engineer",
-      "experience": "2-5 years",
+      "experience": "3-5 years",
       "topic": "Monitoring",
       "question": "What metrics would you monitor for a production API serving millions of requests per day?",
       "difficulty": "medium",

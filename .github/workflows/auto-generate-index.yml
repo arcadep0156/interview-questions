@@ -24,11 +24,9 @@ jobs:
       
       - name: Generate index.json
         run: node scripts/generate-index.js
-        working-directory: interview-questions
       
       - name: Check for changes
         id: check
-        working-directory: interview-questions
         run: |
           if git diff --quiet index.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
@@ -41,6 +39,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add interview-questions/index.json
+          git add index.json
           git commit -m "chore: auto-generate index.json [skip ci]"
           git push
