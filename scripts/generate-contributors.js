@@ -38,15 +38,24 @@ function generateContributors() {
       data.questions.forEach(q => {
         const github = q.contributor.github;
         const name = q.contributor.name;
+        const linkedin = q.contributor.linkedin;
         
         if (contributorMap.has(github)) {
           contributorMap.get(github).count++;
+          // Update LinkedIn if not set and available
+          if (linkedin && !contributorMap.get(github).linkedin) {
+            contributorMap.get(github).linkedin = linkedin;
+          }
         } else {
-          contributorMap.set(github, {
+          const contributor = {
             name: name,
             github: github,
             count: 1
-          });
+          };
+          if (linkedin) {
+            contributor.linkedin = linkedin;
+          }
+          contributorMap.set(github, contributor);
         }
       });
     }
