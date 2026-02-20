@@ -16,6 +16,51 @@
       },
       "contributedAt": "2025-01-10",
       "tags": ["cicd", "rollback", "automation", "deployment"]
+    },
+    {
+      "id": "openai-2025-002",
+      "role": "ML Engineer",
+      "experience": "5+ years",
+      "topic": "Infrastructure",
+      "question": "How would you design infrastructure for training large language models at scale?",
+      "difficulty": "hard",
+      "contributor": {
+        "name": "Henry Chen",
+        "github": "@henrychen",
+        "linkedin": "https://linkedin.com/in/henrychen"
+      },
+      "contributedAt": "2025-02-01",
+      "tags": ["ml", "infrastructure", "scaling", "gpu"]
+    },
+    {
+      "id": "openai-2025-003",
+      "role": "DevOps Engineer",
+      "experience": "3-5 years",
+      "topic": "Monitoring",
+      "question": "What metrics would you monitor for a production API serving millions of requests per day?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Test User",
+        "github": "@testuser",
+        "linkedin": "https://linkedin.com/in/testuser"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["monitoring", "api", "metrics", "observability"]
+    },
+    {
+      "id": "openai-2025-004",
+      "role": "DevOps Engineer",
+      "experience": "0-2 years",
+      "topic": "Docker",
+      "question": "Explain the difference between CMD and ENTRYPOINT in a Dockerfile.",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Test User",
+        "github": "@testuser",
+        "linkedin": "https://linkedin.com/in/testuser"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["docker", "containers", "dockerfile"]
     }
   ]
 }

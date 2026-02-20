@@ -16,6 +16,49 @@
       },
       "contributedAt": "2024-11-15",
       "tags": ["docker", "containers", "fundamentals"]
+    },
+    {
+      "id": "amazon-2024-002",
+      "role": "Cloud Engineer",
+      "experience": "5+ years",
+      "topic": "AWS",
+      "question": "How would you design a highly available and fault-tolerant architecture on AWS for a critical application?",
+      "difficulty": "hard",
+      "contributor": {
+        "name": "Bob Wilson",
+        "github": "@bobwilson"
+      },
+      "contributedAt": "2024-09-10",
+      "tags": ["aws", "high-availability", "architecture"]
+    },
+    {
+      "id": "amazon-2024-003",
+      "role": "DevOps Engineer",
+      "experience": "3-5 years",
+      "topic": "Monitoring",
+      "question": "What metrics would you monitor for a microservices architecture and why?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Carol Davis",
+        "github": "@caroldavis",
+        "linkedin": "https://linkedin.com/in/caroldavis"
+      },
+      "contributedAt": "2024-10-05",
+      "tags": ["monitoring", "microservices", "observability"]
+    },
+    {
+      "id": "amazon-2024-004",
+      "role": "DevOps Engineer",
+      "experience": "0-2 years",
+      "topic": "Linux",
+      "question": "Explain the difference between soft links and hard links in Linux. When would you use each?",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Julia Martinez",
+        "github": "@juliam"
+      },
+      "contributedAt": "2024-11-20",
+      "tags": ["linux", "filesystem", "fundamentals"]
     }
   ]
 }

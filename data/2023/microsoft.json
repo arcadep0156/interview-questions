@@ -16,6 +16,20 @@
       },
       "contributedAt": "2023-12-05",
       "tags": ["cicd", "pipeline", "deployment", "azure"]
+    },
+    {
+      "id": "microsoft-2023-002",
+      "role": "DevOps Engineer",
+      "experience": "5+ years",
+      "topic": "Azure",
+      "question": "Explain Azure DevOps vs GitHub Actions. When would you choose one over the other?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Emma Johnson",
+        "github": "@emmaj"
+      },
+      "contributedAt": "2023-11-20",
+      "tags": ["azure", "github-actions", "cicd"]
     }
   ]
 }

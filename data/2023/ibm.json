@@ -16,6 +16,21 @@
       },
       "contributedAt": "2023-08-15",
       "tags": ["legacy", "mainframe", "devops", "transformation"]
+    },
+    {
+      "id": "ibm-2023-002",
+      "role": "Site Reliability Engineer",
+      "experience": "5+ years",
+      "topic": "Automation",
+      "question": "Describe your approach to automating incident response and recovery procedures.",
+      "difficulty": "hard",
+      "contributor": {
+        "name": "Frank Miller",
+        "github": "@frankmiller",
+        "linkedin": "https://linkedin.com/in/frankmiller"
+      },
+      "contributedAt": "2023-09-25",
+      "tags": ["automation", "incident-response", "sre"]
     }
   ]
 }
