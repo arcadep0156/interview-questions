@@ -32,7 +32,7 @@
           },
           "experience": {
             "type": "string",
-            "enum": ["0-2 years", "3-5 years", "5+ years"],
+            "enum": ["Fresher", "0-2 years", "3-5 years", "5+ years"],
             "description": "Experience level required"
           },
           "topic": {
