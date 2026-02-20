@@ -1,13 +1,19 @@
 {
   "topics": [
+    "Ansible",
     "AWS",
     "Automation",
     "Azure",
     "CDN",
     "CI/CD",
+    "CloudFormation",
     "Docker",
+    "ELK Stack",
     "GCP",
     "Git",
+    "GitLab CI",
+    "Grafana",
+    "Helm",
     "Infrastructure",
     "Jenkins",
     "Kubernetes",
@@ -15,10 +21,12 @@
     "Linux",
     "Monitoring",
     "Networking",
+    "Prometheus",
     "Python",
     "Security",
     "Shell Scripting",
-    "Terraform"
+    "Terraform",
+    "Vault"
   ],
   "description": "Allowed topics for interview questions"
 }

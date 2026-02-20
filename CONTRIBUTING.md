@@ -12,6 +12,23 @@ Thank you for considering contributing to this repository! Your contributions he
 
 ## 🚀 How to Contribute
 
+### 🎯 Quick Start (TL;DR)
+
+1. Fork this repo
+2. Clone: `git clone https://github.com/YOUR-USERNAME/interview-questions.git`
+3. Create branch: `git checkout -b add-questions`
+4. Edit JSON file in `data/YYYY/company.json` - add your question
+5. Commit: `git add data/2025/company.json && git commit -m "Add: questions"`
+6. Push: `git push origin add-questions`
+7. Create Pull Request on GitHub
+8. ✅ Done! Automation handles the rest.
+
+**No scripts to run. No manual index updates. Just add questions!**
+
+---
+
+### Detailed Steps
+
 ### Step 1: Fork the Repository
 
 1. Navigate to [https://github.com/arcadep0156/interview-questions](https://github.com/arcadep0156/interview-questions)
@@ -38,26 +55,67 @@ git checkout -b add-interview-questions
 
 ### Step 4: Add Your Questions
 
-Navigate to the appropriate folder and edit the JSON file:
+**Find or create the company file:**
 
+If the company file exists (e.g., `data/2025/amazon.json`):
 ```bash
-cd data/2025
-nano openai.json
+# Edit existing file
+nano data/2025/amazon.json
 ```
 
-Add your interview questions following the JSON format below.
+If creating a new company file:
+```bash
+# Create new file for the company
+nano data/2025/newcompany.json
+```
+
+**Add your question to the `questions` array:**
+
+```json
+{
+  "company": "Amazon",
+  "year": 2025,
+  "questions": [
+    {
+      "id": "amazon-2025-001",
+      "company": "Amazon",
+      "year": 2025,
+      "role": "DevOps Engineer",
+      "experience": "3-5 years",
+      "topic": "Docker",
+      "question": "Your interview question here?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Your Full Name",
+        "github": "@your-github-username",
+        "linkedin": "https://linkedin.com/in/your-profile"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["docker", "containers"]
+    }
+  ]
+}
+```
+
+**Important:** 
+- ✅ Just add your question to the JSON file
+- ✅ GitHub Actions will automatically update `index.json` and `contributors.json`
+- ❌ No need to run any scripts manually
+- ❌ No need to update index.json yourself
 
 ### Step 5: Commit Your Changes
 
 ```bash
-git add .
-git commit -m "Add: Amazon Docker interview questions from 2024"
+git add data/2025/amazon.json
+git commit -m "Add: Amazon Docker interview questions from 2025"
 ```
 
 **Commit Message Format:**
 - `Add: <brief description of questions added>`
 - `Update: <brief description of changes>`
 - `Fix: <brief description of fix>`
+
+**Note:** Only commit the data file you edited. Don't commit `index.json` or `contributors.json` - they auto-update via GitHub Actions!
 
 ### Step 6: Push to Your Fork
 
@@ -71,6 +129,20 @@ git push origin add-interview-questions
 2. Click **Compare & pull request**
 3. Fill in the PR template with details
 4. Submit the Pull Request
+5. **Automated validation runs** - checks JSON format, duplicates, topics
+6. Once merged, **GitHub Actions automatically**:
+   - Updates `index.json`
+   - Updates `contributors.json`
+   - Triggers website rebuild
+   - Your questions appear on the website within 3 minutes! 🎉
+
+**You don't need to:**
+- ❌ Run any scripts
+- ❌ Update index.json manually
+- ❌ Update contributors.json manually
+- ❌ Do git pull after merge (unless you want to sync your fork)
+
+Everything is automated! Just add your questions and create a PR.
 
 ## 📝 Contribution Guidelines
 
@@ -156,24 +228,28 @@ Your JSON entry must include all these fields:
 
 ### Valid Topics
 
-Use **ONLY** these standardized topics:
+Use **ONLY** these standardized topics (from `meta/topics.json`):
 
-**DevOps Topics:**
-- Docker
-- Kubernetes
-- Shell Scripting
-- CI/CD
-- AWS
-- Azure
-- GCP
-- Terraform
-- Ansible
-- Jenkins
-- Git
-- Linux
-- Networking
-- Monitoring
-- Security
+Ansible, AWS, Automation, Azure, CDN, CI/CD, CloudFormation, Docker, ELK Stack, GCP, Git, GitLab CI, Grafana, Helm, Infrastructure, Jenkins, Kubernetes, Legacy Systems, Linux, Monitoring, Networking, Prometheus, Python, Security, Shell Scripting, Terraform, Vault
+
+**⚠️ Important:** 
+- Using a topic not in this list will cause validation to fail
+- Your PR will not be mergeable until you fix it
+
+**Need a new topic?**
+1. First, submit a separate PR to add it to `meta/topics.json`
+2. Once approved, add your question with the new topic
+3. Or mention the new topic in your PR description and maintainers will add it
+
+### Companies
+
+**You DON'T need to touch `meta/companies.json`!**
+
+Just add your question to the appropriate file:
+- If company file exists: Edit `data/YYYY/company.json`
+- If new company: Create `data/YYYY/newcompany.json`
+
+Maintainers will update `meta/companies.json` if needed.
 
 ### Example Entry
 
