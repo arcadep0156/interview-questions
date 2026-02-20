@@ -15,11 +15,11 @@ This guide explains how interview questions automatically update on the communit
 
 ## Architecture
 
-### Repo 1: `TrainWithShubham/interview-questions`
-- Contains CSV files with interview questions
+### Repo 1: `arcadep0156/interview-questions`
+- Contains JSON files with interview questions
 - When PR merges to `main`, triggers workflow
 
-### Repo 2: `TrainWithShubham/community-website`
+### Repo 2: `arcadep0156/community-website`
 - Main website that displays questions
 - Listens for `repository_dispatch` events
 - Auto-rebuilds when triggered
@@ -39,7 +39,7 @@ This guide explains how interview questions automatically update on the communit
 
 ### Step 2: Add Secret to interview-questions Repo
 
-1. Go to https://github.com/TrainWithShubham/interview-questions/settings/secrets/actions
+1. Go to https://github.com/arcadep0156/interview-questions/settings/secrets/actions
 2. Click "New repository secret"
 3. Name: `TRIGGER_TOKEN`
 4. Value: Paste the PAT from Step 1
@@ -47,20 +47,26 @@ This guide explains how interview questions automatically update on the communit
 
 ### Step 3: Test the Workflow
 
-1. Make a small change to any CSV file in `interview-questions`
+1. Make a small change to any JSON file in `interview-questions/data`
 2. Commit and push to `main` (or merge a PR)
-3. Go to https://github.com/TrainWithShubham/interview-questions/actions
+3. Go to https://github.com/arcadep0156/interview-questions/actions
 4. You should see "Trigger Community Website Rebuild" running ✅
-5. Go to https://github.com/TrainWithShubham/community-website/actions
+5. Go to https://github.com/arcadep0156/community-website/actions
 6. You should see "Deploy to GitHub Pages" running ✅
 7. Wait 2-3 minutes for deployment
-8. Visit https://community.trainwithshubham.com/interview-questions
+8. Visit https://arcadep0156.github.io/community-website/interview-questions
 9. **New questions should appear immediately!** 🎉
 
 ## Workflow Files
 
 ### interview-questions/.github/workflows/trigger-deploy.yml
-Sends webhook to community-website when CSV files change.
+Sends webhook to community-website when JSON files change.
+
+### interview-questions/.github/workflows/validate.yml
+Validates JSON schema and data quality on every PR.
+
+### interview-questions/.github/workflows/auto-generate-index.yml
+Auto-generates index.json and contributors.json after validation.
 
 ### community-website/.github/workflows/deploy.yml
 Listens for webhooks and rebuilds the site.
@@ -90,17 +96,17 @@ Listens for webhooks and rebuilds the site.
 ### Webhook not triggering?
 1. Check if `TRIGGER_TOKEN` secret exists in interview-questions repo
 2. Verify token has `repo` and `workflow` scopes
-3. Check Actions logs: https://github.com/TrainWithShubham/interview-questions/actions
+3. Check Actions logs: https://github.com/arcadep0156/interview-questions/actions
 
 ### Build failing?
-1. Check community-website Actions: https://github.com/TrainWithShubham/community-website/actions
+1. Check community-website Actions: https://github.com/arcadep0156/community-website/actions
 2. Look for errors in build logs
-3. Verify CSV files are valid (no syntax errors)
+3. Verify JSON files are valid (no syntax errors)
 
 ### Questions not updating?
 1. Clear browser cache (Ctrl + Shift + R)
 2. Wait 5 minutes for CDN cache to clear
-3. Check if CSV was actually updated on GitHub
+3. Check if JSON was actually updated on GitHub
 
 ## Alternative: Scheduled Builds
 

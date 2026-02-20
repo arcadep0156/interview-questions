@@ -4,53 +4,81 @@ Quick reference for working with the interview-questions repository.
 
 ## Repository Purpose
 
-Community-driven collection of real DevOps, Cloud, and DevSecOps interview questions in CSV format.
+Community-driven collection of real DevOps, Cloud, and DevSecOps interview questions in JSON format.
 
 ## File Structure
 
 ```
 interview-questions/
-├── .github/workflows/     # GitHub Actions (auto-deploy trigger)
+├── .github/workflows/     # GitHub Actions (validation, auto-deploy)
 ├── .kiro/                 # Kiro configuration
 │   ├── specs/            # Feature specifications
-│   └── steering/         # Project guidelines (auto-included)
-├── devops/
-│   └── interview-questions.csv  # Main data file
+│   └── steering/         # Project guidelines
+├── data/
+│   ├── 2023/             # Questions from 2023
+│   ├── 2024/             # Questions from 2024
+│   └── 2025/             # Questions from 2025
+│       └── openai.json   # Company-specific files
+├── meta/
+│   ├── schema.json       # JSON Schema for validation
+│   ├── topics.json       # Allowed topics
+│   └── companies.json    # Company metadata
+├── scripts/
+│   ├── generate-contributors.js  # Auto-generate contributors
+│   ├── generate-index.js         # Auto-generate master index
+│   └── update-readme-contributors.js  # Update README contributors
+├── index.json            # Master index (auto-generated)
+├── contributors.json     # Contributors list (auto-generated)
 ├── docs/                 # Documentation
 └── CONTRIBUTING.md       # Contribution guide
 ```
 
-## CSV Format
+## JSON Format
 
-### Required Columns (7 total)
-```csv
-company,year,contributor,role,experience,topic,question
-```
-
-### Example Entry
-```csv
-Amazon,2024,@johndoe,DevOps Engineer,3-5 years,Docker,"Explain the difference between CMD and ENTRYPOINT"
+### Required Fields
+```json
+{
+  "id": "company-year-XXX",
+  "company": "Amazon",
+  "year": 2024,
+  "role": "DevOps Engineer",
+  "experience": "3-5 years",
+  "topic": "Docker",
+  "question": "Your interview question here?",
+  "difficulty": "medium",
+  "contributor": {
+    "name": "Your Full Name",
+    "github": "@your-github-username",
+    "linkedin": "https://linkedin.com/in/your-profile"
+  },
+  "contributedAt": "2025-02-20",
+  "tags": ["docker", "containers"]
+}
 ```
 
 ### Formatting Rules
-- Quote fields containing commas: `"Question with, comma"`
-- Escape internal quotes: `"What is ""IaC""?"`
-- Single-line entries (no line breaks)
-- UTF-8 encoding, Unix line endings (LF)
+- Valid JSON syntax (proper commas, brackets)
+- Unique IDs (company-year-number format)
+- Year as number, not string
+- Contributor object with name, github, and optional linkedin
+- Tags array for searchability
 
 ## Standardized Values
 
 ### Topics (case-sensitive)
-Docker, Kubernetes, Shell Scripting, CI/CD, AWS, Azure, GCP, Terraform, Ansible, Jenkins, Git, Linux, Networking, Monitoring, Security
+Docker, Kubernetes, Shell Scripting, CI/CD, AWS, Azure, GCP, Terraform, Ansible, Jenkins, Git, Linux, Networking, Monitoring, Security, Legacy Systems, Python
 
 ### Experience Levels
-`0-1 years`, `1-2 years`, `2-3 years`, `3-5 years`, `5+ years`
+`Fresher`, `0-2 years`, `3-5 years`, `5+ years`
+
+### Difficulty Levels
+`easy`, `medium`, `hard`
 
 ### Year Format
-YYYY (e.g., 2024, 2023)
+YYYY as number (e.g., 2024, 2023)
 
 ### Contributor Format
-@username (e.g., @johndoe)
+Object with name, github (@username), and optional linkedin URL
 
 ## Common Workflows
 
@@ -59,11 +87,13 @@ YYYY (e.g., 2024, 2023)
 1. Fork the repository
 2. Clone your fork
 3. Create a branch: `git checkout -b add-company-topic-questions`
-4. Edit `devops/interview-questions.csv`
-5. Add your questions following the format
+4. Edit appropriate JSON file in `data/YYYY/company.json`
+5. Add your questions following the JSON format
 6. Commit: `git commit -m "Add: Company Topic interview questions"`
 7. Push: `git push origin add-company-topic-questions`
 8. Create Pull Request
+9. Automated validation runs (schema, duplicates, topics)
+10. Once merged, index.json and contributors.json auto-update
 
 ### Branch Naming
 - `add-<company>-<topic>-questions` - Adding new questions
@@ -94,14 +124,16 @@ YYYY (e.g., 2024, 2023)
 ## Integration
 
 ### Community Website
-- CSV data is consumed by TrainWithShubham community website
-- Changes to CSV trigger automatic website rebuild
+- JSON data consumed by community website at https://arcadep0156.github.io/community-website/
+- Changes trigger automatic website rebuild
 - Questions displayed in searchable interface
-- Filterable by topic, company, experience level
+- Filterable by topic, company, experience level, difficulty
 
 ### GitHub Actions
-- `trigger-deploy.yml` - Triggers website rebuild on CSV changes
-- Runs automatically when changes are pushed to main branch
+- `validate.yml` - Validates JSON schema and data quality
+- `auto-generate-index.yml` - Auto-generates index.json and contributors.json
+- `trigger-deploy.yml` - Triggers website rebuild on data changes
+- All run automatically on push to main branch
 
 ## Working with Kiro
 
@@ -123,21 +155,23 @@ Run all tasks for [spec-name]
 
 ## Common Issues
 
-### CSV Parsing Errors
-- Check for unclosed quotes
-- Verify comma escaping in questions
-- Ensure no line breaks within questions
+### JSON Syntax Errors
+- Check for missing commas between fields
+- Verify all brackets and braces are closed
+- Ensure proper quote escaping
+- Use a JSON validator before committing
 
 ### Invalid Format
-- Year must be YYYY format
-- Contributor must start with @
+- Year must be number, not string
+- ID must be unique across all questions
 - Experience must match standard formats
-- Topic must be from approved list
+- Topic must be from approved list in meta/topics.json
+- Contributor must have name and github fields
 
 ### Duplicates
-- Search CSV before adding questions
-- Use case-insensitive search
-- Check similar questions with different wording
+- Automated validation checks for duplicate IDs
+- Search existing questions before adding
+- Use unique ID format: company-year-number
 
 ## Resources
 
@@ -150,23 +184,20 @@ Run all tasks for [spec-name]
 
 ```bash
 # Clone repository
-git clone https://github.com/Nandan29300/interview-questions.git
+git clone https://github.com/arcadep0156/interview-questions.git
 
 # Create feature branch
 git checkout -b add-interview-questions
 
-# View CSV
-cat devops/interview-questions.csv
+# View questions
+cat data/2025/openai.json
 
-# Search for duplicates
-grep -i "your question text" devops/interview-questions.csv
-
-# Check CSV format
-file devops/interview-questions.csv  # Should show UTF-8
+# Validate JSON syntax
+node -e "JSON.parse(require('fs').readFileSync('data/2025/openai.json'))"
 
 # Add and commit
-git add devops/interview-questions.csv
-git commit -m "Add: Amazon Docker interview questions"
+git add data/2025/openai.json
+git commit -m "Add: OpenAI Docker interview questions"
 
 # Push to fork
 git push origin add-interview-questions
