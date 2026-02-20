@@ -1,0 +1,21 @@
+{
+  "company": "Google",
+  "year": "2024",
+  "questions": [
+    {
+      "id": "google-2024-001",
+      "role": "SRE",
+      "experience": "5+ years",
+      "topic": "Kubernetes",
+      "question": "How do you implement rolling updates in Kubernetes? What strategies would you use to ensure zero downtime?",
+      "difficulty": "hard",
+      "contributor": {
+        "name": "Jane Doe",
+        "github": "@janedoe",
+        "linkedin": "https://linkedin.com/in/janedoe"
+      },
+      "contributedAt": "2024-10-20",
+      "tags": ["kubernetes", "deployment", "sre", "zero-downtime"]
+    }
+  ]
+}

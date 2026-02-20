@@ -1,0 +1,34 @@
+{
+  "companies": [
+    {
+      "name": "Amazon",
+      "slug": "amazon",
+      "category": "FAANG"
+    },
+    {
+      "name": "Google",
+      "slug": "google",
+      "category": "FAANG"
+    },
+    {
+      "name": "Microsoft",
+      "slug": "microsoft",
+      "category": "FAANG"
+    },
+    {
+      "name": "OpenAI",
+      "slug": "openai",
+      "category": "Tech"
+    },
+    {
+      "name": "Cloudflare",
+      "slug": "cloudflare",
+      "category": "Tech"
+    },
+    {
+      "name": "IBM",
+      "slug": "ibm",
+      "category": "Enterprise"
+    }
+  ]
+}

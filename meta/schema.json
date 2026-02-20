@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Interview Questions Schema",
+  "description": "Schema for DevOps interview questions",
+  "type": "object",
+  "required": ["company", "year", "questions"],
+  "properties": {
+    "company": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "year": {
+      "type": "string",
+      "pattern": "^20[0-9]{2}$",
+      "description": "Year in YYYY format"
+    },
+    "questions": {
+      "type": "array",
+      "description": "Array of interview questions",
+      "items": {
+        "type": "object",
+        "required": ["id", "role", "experience", "topic", "question", "contributor"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+-[0-9]{4}-[0-9]{3}$",
+            "description": "Unique question ID (e.g., amz-2024-001)"
+          },
+          "role": {
+            "type": "string",
+            "description": "Job role"
+          },
+          "experience": {
+            "type": "string",
+            "enum": ["0-2 years", "3-5 years", "5+ years"],
+            "description": "Experience level required"
+          },
+          "topic": {
+            "type": "string",
+            "description": "Main topic/technology"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 10,
+            "description": "The interview question"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard"],
+            "description": "Question difficulty level"
+          },
+          "contributor": {
+            "type": "object",
+            "required": ["github"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Contributor's full name"
+              },
+              "github": {
+                "type": "string",
+                "pattern": "^@[a-zA-Z0-9_-]+$",
+                "description": "GitHub username with @ prefix"
+              },
+              "linkedin": {
+                "type": "string",
+                "format": "uri",
+                "description": "LinkedIn profile URL"
+              }
+            },
+            "description": "Contributor information"
+          },
+          "contributedAt": {
+            "type": "string",
+            "format": "date",
+            "description": "Date when question was added (YYYY-MM-DD)"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Additional tags for categorization"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "company": "Cloudflare",
+  "year": "2024",
+  "questions": [
+    {
+      "id": "cloudflare-2024-001",
+      "role": "Network Engineer",
+      "experience": "3-5 years",
+      "topic": "Networking",
+      "question": "What is Anycast and how does Cloudflare use it for DDoS protection?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Network Ops",
+        "github": "@netops",
+        "linkedin": "https://linkedin.com/in/netops"
+      },
+      "contributedAt": "2024-09-10",
+      "tags": ["networking", "anycast", "ddos", "security"]
+    }
+  ]
+}

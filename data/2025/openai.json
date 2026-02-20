@@ -1,0 +1,21 @@
+{
+  "company": "OpenAI",
+  "year": "2025",
+  "questions": [
+    {
+      "id": "openai-2025-001",
+      "role": "DevOps Engineer",
+      "experience": "0-2 years",
+      "topic": "CI/CD",
+      "question": "How do you automate rollback in a failed deployment pipeline?",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "AI Developer",
+        "github": "@ai_dev",
+        "linkedin": "https://linkedin.com/in/ai-developer"
+      },
+      "contributedAt": "2025-01-10",
+      "tags": ["cicd", "rollback", "automation", "deployment"]
+    }
+  ]
+}
