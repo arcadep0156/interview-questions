@@ -1,0 +1,21 @@
+{
+  "company": "Amazon",
+  "year": "2024",
+  "questions": [
+    {
+      "id": "amazon-2024-001",
+      "role": "DevOps Engineer",
+      "experience": "3-5 years",
+      "topic": "Docker",
+      "question": "Explain the difference between Docker CMD and ENTRYPOINT. When would you use one over the other?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "John Doe",
+        "github": "@johndoe",
+        "linkedin": "https://linkedin.com/in/johndoe"
+      },
+      "contributedAt": "2024-11-15",
+      "tags": ["docker", "containers", "fundamentals"]
+    }
+  ]
+}

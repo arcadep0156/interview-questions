@@ -1,0 +1,21 @@
+{
+  "company": "Microsoft",
+  "year": "2023",
+  "questions": [
+    {
+      "id": "microsoft-2023-001",
+      "role": "Cloud Engineer",
+      "experience": "3-5 years",
+      "topic": "CI/CD",
+      "question": "Describe a complete CI/CD pipeline you've built. What tools did you use and how did you handle deployment failures?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "DevOps Guru",
+        "github": "@devops_guru",
+        "linkedin": "https://linkedin.com/in/devops-guru"
+      },
+      "contributedAt": "2023-12-05",
+      "tags": ["cicd", "pipeline", "deployment", "azure"]
+    }
+  ]
+}

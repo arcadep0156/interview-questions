@@ -1,0 +1,131 @@
+name: Validate Interview Questions
+
+on:
+  pull_request:
+    paths:
+      - 'data/**/*.json'
+      - 'index.json'
+      - 'meta/**/*.json'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**/*.json'
+      - 'index.json'
+
+jobs:
+  validate:
+    name: Validate JSON Files
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli
+      
+      - name: Validate question files
+        run: |
+          echo "🔍 Validating question files..."
+          for file in data/*/*.json; do
+            if [ -f "$file" ]; then
+              echo "Validating: $file"
+              ajv validate -s meta/schema.json -d "$file" --strict=false || exit 1
+            fi
+          done
+          echo "✅ All files valid"
+      
+      - name: Check for duplicate IDs
+        run: |
+          echo "🔍 Checking for duplicate IDs..."
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            
+            function getAllFiles(dir) {
+              let results = [];
+              const list = fs.readdirSync(dir);
+              list.forEach(file => {
+                file = path.join(dir, file);
+                const stat = fs.statSync(file);
+                if (stat && stat.isDirectory()) {
+                  results = results.concat(getAllFiles(file));
+                } else if (file.endsWith('.json')) {
+                  results.push(file);
+                }
+              });
+              return results;
+            }
+            
+            const ids = new Set();
+            let duplicates = 0;
+            
+            const files = getAllFiles('data');
+            files.forEach(file => {
+              const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+              if (data.questions) {
+                data.questions.forEach(q => {
+                  if (ids.has(q.id)) {
+                    console.error(\`❌ Duplicate ID: \${q.id} in \${file}\`);
+                    duplicates++;
+                  } else {
+                    ids.add(q.id);
+                  }
+                });
+              }
+            });
+            
+            if (duplicates > 0) {
+              console.error(\`❌ Found \${duplicates} duplicate IDs\`);
+              process.exit(1);
+            }
+            
+            console.log(\`✅ No duplicates (\${ids.size} unique questions)\`);
+          "
+      
+      - name: Validate index.json
+        run: |
+          echo "🔍 Validating index.json..."
+          node -e "
+            const fs = require('fs');
+            const index = JSON.parse(fs.readFileSync('index.json', 'utf8'));
+            
+            if (!index.version || !index.files || !index.metadata) {
+              console.error('❌ index.json missing required fields');
+              process.exit(1);
+            }
+            
+            let errors = 0;
+            index.files.forEach(file => {
+              if (!fs.existsSync(file.path)) {
+                console.error(\`❌ File not found: \${file.path}\`);
+                errors++;
+              }
+            });
+            
+            if (errors > 0) {
+              process.exit(1);
+            }
+            
+            console.log('✅ index.json is valid');
+          "
+      
+      - name: Summary
+        if: success()
+        run: |
+          echo "✅ All validations passed!"
+          node -e "
+            const fs = require('fs');
+            const index = JSON.parse(fs.readFileSync('index.json', 'utf8'));
+            console.log('📊 Statistics:');
+            console.log(\`   Total Questions: \${index.totalQuestions}\`);
+            console.log(\`   Companies: \${index.metadata.companies.length}\`);
+            console.log(\`   Years: \${index.metadata.years.length}\`);
+            console.log(\`   Topics: \${index.metadata.topics.length}\`);
+          "

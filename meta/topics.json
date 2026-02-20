@@ -1,0 +1,21 @@
+{
+  "topics": [
+    "AWS",
+    "Azure",
+    "CI/CD",
+    "Docker",
+    "GCP",
+    "Git",
+    "Jenkins",
+    "Kubernetes",
+    "Legacy Systems",
+    "Linux",
+    "Monitoring",
+    "Networking",
+    "Python",
+    "Security",
+    "Shell Scripting",
+    "Terraform"
+  ],
+  "description": "Allowed topics for interview questions"
+}
