@@ -1,25 +1,22 @@
 {
   "version": "v1",
-  "lastUpdated": "2026-02-20T16:40:42.395Z",
+  "lastUpdated": "2026-02-20T15:41:37.311Z",
   "totalContributors": 15,
   "contributors": [
     {
       "name": "Mainframe Expert",
       "github": "@mainframe",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/mainframe-expert"
+      "count": 1
     },
     {
       "name": "Frank Miller",
       "github": "@frankmiller",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/frankmiller"
+      "count": 1
     },
     {
       "name": "DevOps Guru",
       "github": "@devops_guru",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/devops-guru"
+      "count": 1
     },
     {
       "name": "Emma Johnson",
@@ -29,8 +26,7 @@
     {
       "name": "John Doe",
       "github": "@johndoe",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/johndoe"
+      "count": 1
     },
     {
       "name": "Bob Wilson",
@@ -40,8 +36,7 @@
     {
       "name": "Carol Davis",
       "github": "@caroldavis",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/caroldavis"
+      "count": 1
     },
     {
       "name": "Julia Martinez",
@@ -51,8 +46,7 @@
     {
       "name": "Network Ops",
       "github": "@netops",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/netops"
+      "count": 1
     },
     {
       "name": "Grace Lee",
@@ -62,8 +56,7 @@
     {
       "name": "Jane Doe",
       "github": "@janedoe",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/janedoe"
+      "count": 1
     },
     {
       "name": "Sarah Brown",
@@ -73,20 +66,17 @@
     {
       "name": "Ivan Petrov",
       "github": "@ivanpetrov",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/ivanpetrov"
+      "count": 1
     },
     {
       "name": "AI Developer",
       "github": "@ai_dev",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/ai-developer"
+      "count": 1
     },
     {
       "name": "Community",
       "github": "@community",
-      "count": 1,
-      "linkedin": "https://linkedin.com/in/community"
+      "count": 1
     }
   ]
 }
