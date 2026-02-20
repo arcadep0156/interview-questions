@@ -1,7 +1,7 @@
 {
   "version": "v1",
-  "lastUpdated": "2026-02-20T09:15:00.771Z",
-  "totalQuestions": 15,
+  "lastUpdated": "2026-02-20T10:28:48.049Z",
+  "totalQuestions": 17,
   "files": [
     {
       "path": "data/2023/ibm.json",
@@ -60,10 +60,12 @@
       "path": "data/2025/openai.json",
       "company": "OpenAI",
       "year": "2025",
-      "count": 2,
+      "count": 4,
       "topics": [
         "CI/CD",
-        "Infrastructure"
+        "Infrastructure",
+        "Monitoring",
+        "Docker"
       ]
     }
   ],

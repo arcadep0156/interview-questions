@@ -27,10 +27,16 @@ jobs:
       - name: Generate index.json
         run: node scripts/generate-index.js
       
+      - name: Generate contributors.json
+        run: node scripts/generate-contributors.js
+      
+      - name: Update README with contributors
+        run: node scripts/update-readme-contributors.js
+      
       - name: Check for changes
         id: check
         run: |
-          if git diff --quiet index.json; then
+          if git diff --quiet index.json contributors.json README.md; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -41,6 +47,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.json
-          git commit -m "chore: auto-generate index.json [skip ci]"
+          git add index.json contributors.json README.md
+          git commit -m "chore: auto-update stats and contributors [skip ci]"
           git push
