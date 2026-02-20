@@ -2,74 +2,107 @@
 
 ## Data Format
 
-- **CSV** - Primary data storage format
+- **JSON** - Primary data storage format organized by year and company
 - **UTF-8** encoding for all text files
 - **Git** for version control and collaboration
+- **JSON Schema** for validation
 
 ## Repository Structure
 
 ```
 interview-questions/
-├── devops/
-│   └── interview-questions.csv    # Main data file
-├── docs/
-│   └── GITHUB_ACTIONS_SETUP.md   # CI/CD documentation
+├── data/
+│   ├── 2023/
+│   │   ├── ibm.json
+│   │   └── microsoft.json
+│   ├── 2024/
+│   │   ├── amazon.json
+│   │   ├── cloudflare.json
+│   │   └── google.json
+│   └── 2025/
+│       └── openai.json
+├── meta/
+│   ├── schema.json         # JSON Schema for validation
+│   ├── topics.json         # Allowed topics list
+│   └── companies.json      # Company metadata
+├── scripts/
+│   ├── generate-index.js
+│   ├── generate-contributors.js
+│   └── update-readme-contributors.js
 ├── .github/
-│   └── workflows/                 # GitHub Actions workflows
-├── CONTRIBUTING.md                # Contribution guidelines
-├── README.md                      # Project overview
-└── LICENSE                        # MIT License
+│   └── workflows/
+│       ├── validate.yml
+│       ├── auto-generate-index.yml
+│       └── trigger-deploy.yml
+├── index.json              # Auto-generated master index
+├── contributors.json       # Auto-generated contributors
+├── docs/
+│   └── GITHUB_ACTIONS_SETUP.md
+├── CONTRIBUTING.md
+├── README.md
+└── LICENSE
 ```
 
-## CSV Format Specifications
+## JSON Format Specifications
 
-### Required Columns (7 total)
-1. `company` - String, official company name
-2. `year` - Integer, YYYY format
-3. `contributor` - String, @username format
-4. `role` - String, job title
-5. `experience` - String, standardized ranges
-6. `topic` - String, from approved topic list
-7. `question` - String, quoted if contains commas
+### Required Fields
+```json
+{
+  "id": "company-year-number",
+  "company": "Amazon",
+  "year": 2025,
+  "role": "DevOps Engineer",
+  "experience": "3-5 years",
+  "topic": "Docker",
+  "question": "Question text here",
+  "difficulty": "medium",
+  "contributor": {
+    "name": "Full Name",
+    "github": "@username",
+    "linkedin": "https://linkedin.com/in/profile"
+  },
+  "contributedAt": "2025-02-20",
+  "tags": ["docker", "containers"]
+}
+```
 
 ### Formatting Rules
-- Use double quotes for fields containing commas
-- Escape internal quotes with double quotes (`""`)
-- Single-line entries (no line breaks within questions)
-- UTF-8 encoding
-- Unix line endings (LF)
+- Valid JSON syntax with proper commas and brackets
+- Unique IDs in format: `company-year-number`
+- Year as number, not string
+- Contributor object with name, github (required), linkedin (optional)
+- Tags array for searchability
 
-## Standardized Topics
+## Standardized Topics (27 total)
 
 **DevOps & Infrastructure:**
-- Docker
-- Kubernetes
-- Shell Scripting
-- CI/CD
-- Terraform
-- Ansible
-- Jenkins
-- Git
-- Linux
+- Ansible, CI/CD, Docker, GitLab CI, Helm, Jenkins, Kubernetes, Shell Scripting, Terraform, Vault
 
 **Cloud Platforms:**
-- AWS
-- Azure
-- GCP
+- AWS, Azure, CloudFormation, GCP
 
-**Operations:**
-- Networking
-- Monitoring
-- Security
+**Monitoring & Observability:**
+- ELK Stack, Grafana, Monitoring, Prometheus
+
+**Core Skills:**
+- Automation, Git, Infrastructure, Legacy Systems, Linux, Networking, Python, Security
+
+**Other:**
+- CDN
 
 ## Experience Level Standards
 
 Use only these formats:
-- `0-1 years`
-- `1-2 years`
-- `2-3 years`
-- `3-5 years`
-- `5+ years`
+- `Fresher` - Entry level
+- `0-2 years` - Junior
+- `3-5 years` - Mid-level
+- `5+ years` - Senior
+
+## Difficulty Levels
+
+- `easy`
+- `medium`
+- `hard`
 
 ## GitHub Workflow
 
@@ -82,43 +115,70 @@ Use only these formats:
 - `Add: <description>`
 - `Update: <description>`
 - `Fix: <description>`
+- `chore: <description>` (for auto-generated files)
 
 ### PR Title Format
 ```
 Add: [Company] [Topic] interview questions
 ```
 
-## Validation
+## Automated Workflows
 
-- CSV syntax validation via GitHub Actions
-- Column count verification (must be 7)
-- Format compliance checks
-- Duplicate detection
+### 1. Validation (`validate.yml`)
+- Runs on PR and push to main
+- Validates JSON schema
+- Checks for duplicate IDs
+- Validates topics against approved list
+- Validates index.json structure
+
+### 2. Auto-Generate Index (`auto-generate-index.yml`)
+- Runs on push to any branch when data files change
+- Generates `index.json` (master index)
+- Generates `contributors.json` (leaderboard)
+- Updates README with top contributors
+- Auto-commits changes
+
+### 3. Trigger Deploy (`trigger-deploy.yml`)
+- Runs on push to main when data or index changes
+- Sends webhook to community-website repo
+- Triggers website rebuild
+- Questions appear on site within 3 minutes
 
 ## Common Commands
 
 ```bash
 # Clone repository
-git clone https://github.com/Nandan29300/interview-questions.git
+git clone https://github.com/arcadep0156/interview-questions.git
 
 # Create feature branch
 git checkout -b add-interview-questions
 
-# Add changes
-git add devops/interview-questions.csv
+# Add changes (only data files)
+git add data/2025/amazon.json
 
 # Commit with proper format
 git commit -m "Add: Amazon Docker interview questions"
 
 # Push to fork
 git push origin add-interview-questions
+
+# Validate JSON locally (optional)
+node -e "JSON.parse(require('fs').readFileSync('data/2025/amazon.json'))"
 ```
 
 ## Quality Standards
 
 - Real questions from actual interviews
 - Clear, grammatically correct English
-- Proper CSV escaping and formatting
-- No duplicate entries
+- Proper JSON formatting with all required fields
+- Unique IDs (no duplicates)
 - Accurate company names and years
-- Valid topic categories
+- Valid topic from approved list
+- LinkedIn URLs for contributor recognition
+
+## Integration
+
+- **Website**: https://arcadep0156.github.io/community-website/interview-questions
+- **Auto-rebuild**: Triggered on data changes
+- **Contributors**: Auto-generated leaderboard with LinkedIn
+- **Search & Filter**: By company, topic, experience, difficulty
