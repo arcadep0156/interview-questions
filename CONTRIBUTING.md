@@ -135,8 +135,6 @@ git push origin add-interview-questions
    - Updates `contributors.json`
    - Triggers website rebuild
    - Your questions appear on the website within 3 minutes! 🎉
-<<<<<<< HEAD
-=======
    - Do `git pull` after merge (unless you want to sync your **fork(local)**)
 >>>>>>> feat/interview-questions
 
@@ -144,9 +142,7 @@ git push origin add-interview-questions
 - ❌ Run any scripts
 - ❌ Update index.json manually
 - ❌ Update contributors.json manually
-<<<<<<< HEAD
 - ❌ Do git pull after merge (unless you want to sync your fork)
-=======
 
 >>>>>>> feat/interview-questions
 
