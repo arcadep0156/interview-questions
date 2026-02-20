@@ -46,6 +46,21 @@
       },
       "contributedAt": "2025-02-20",
       "tags": ["monitoring", "api", "metrics", "observability"]
+    },
+    {
+      "id": "openai-2025-004",
+      "role": "DevOps Engineer",
+      "experience": "0-2 years",
+      "topic": "Docker",
+      "question": "Explain the difference between CMD and ENTRYPOINT in a Dockerfile.",
+      "difficulty": "easy",
+      "contributor": {
+        "name": "Test User",
+        "github": "@testuser",
+        "linkedin": "https://linkedin.com/in/testuser"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["docker", "containers", "dockerfile"]
     }
   ]
 }
