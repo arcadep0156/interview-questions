@@ -1,18 +1,8 @@
 {
   "version": "v1",
-  "lastUpdated": "2026-02-20T15:17:47.197Z",
-  "totalContributors": 17,
+  "lastUpdated": "2026-02-20T15:41:37.311Z",
+  "totalContributors": 15,
   "contributors": [
-    {
-      "name": "Community",
-      "github": "@community",
-      "count": 4
-    },
-    {
-      "name": "Test User",
-      "github": "@testuser",
-      "count": 2
-    },
     {
       "name": "Mainframe Expert",
       "github": "@mainframe",
@@ -84,8 +74,8 @@
       "count": 1
     },
     {
-      "name": "Henry Chen",
-      "github": "@henrychen",
+      "name": "Community",
+      "github": "@community",
       "count": 1
     }
   ]
