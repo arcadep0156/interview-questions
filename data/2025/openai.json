@@ -31,6 +31,21 @@
       },
       "contributedAt": "2025-02-01",
       "tags": ["ml", "infrastructure", "scaling", "gpu"]
+    },
+    {
+      "id": "openai-2025-003",
+      "role": "DevOps Engineer",
+      "experience": "2-5 years",
+      "topic": "Monitoring",
+      "question": "What metrics would you monitor for a production API serving millions of requests per day?",
+      "difficulty": "medium",
+      "contributor": {
+        "name": "Test User",
+        "github": "@testuser",
+        "linkedin": "https://linkedin.com/in/testuser"
+      },
+      "contributedAt": "2025-02-20",
+      "tags": ["monitoring", "api", "metrics", "observability"]
     }
   ]
 }
