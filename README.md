@@ -11,7 +11,7 @@
 
 ## 🎯 Purpose
 
-This repository serves as a **GitHub-based database** of interview questions, consumed by the [TWS Community Hub](https://trainwithshubham.github.io/community-website/) website.
+This repository serves as a **GitHub-based database** of interview questions, consumed by the [TWS Community Hub](https://arcadep0156.github.io/community-website/) website.
 
 ## 📁 Repository Structure
 
@@ -103,7 +103,7 @@ This section is auto-generated. Top contributors by question count:
 
 ## 📊 Browse Questions
 
-Visit the [TWS Community Hub](https://trainwithshubham.github.io/community-website/interview-questions) to browse and filter questions.
+Visit the [TWS Community Hub](https://arcadep0156.github.io/community-website/interview-questions) to browse and filter questions.
 
 ## 📜 License
 
@@ -111,4 +111,4 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-**Maintained by**: [TrainWithShubham Community](https://github.com/TrainWithShubham)
+**Maintained by**: [TrainWithShubham Community](https://github.com/arcadep0156)
